@@ -518,6 +518,7 @@ function legacyCreateRootFromDOMContainer(
           );
         }
       }
+      // 移出div#root的子节点
       container.removeChild(rootSibling);
     }
   }

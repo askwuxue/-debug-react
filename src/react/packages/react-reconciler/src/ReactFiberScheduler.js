@@ -1849,8 +1849,6 @@ export function warnIfNotCurrentlyBatchingInDev(fiber: Fiber): void {
 }
 
 function scheduleWork(fiber: Fiber, expirationTime: ExpirationTime) {
-  // Fiber root节点 根据fiber 向上查找当前fiber的 Fiber root
-  // 从Fiber root 开始执行调度
   const root = scheduleWorkToRoot(fiber, expirationTime);
   if (root === null) {
     if (__DEV__) {

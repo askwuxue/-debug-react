@@ -112,6 +112,7 @@ export function createFiberRoot(
 ): FiberRoot {
   // Cyclic construction. This cheats the type system right now because
   // stateNode is any.
+  // 创建了一个没有初始化的Fiber
   const uninitializedFiber = createHostRootFiber(isConcurrent);
 
   let root;
@@ -175,6 +176,8 @@ export function createFiberRoot(
     }: BaseFiberRootProperties);
   }
 
+  // 创建了个对象，对象的current === FiberNode
+  // Fiber.stateNode === 创建的这个对象
   uninitializedFiber.stateNode = root;
 
   // The reason for the way the Flow types are structured in this file,

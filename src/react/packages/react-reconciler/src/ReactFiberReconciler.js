@@ -153,8 +153,6 @@ function scheduleRootUpdate(
   }
 
   flushPassiveEffects();
-  // 在一开始render的时候
-  // 将当前组件的Element放在Fiber的updateQueue上
   enqueueUpdate(current, update);
   scheduleWork(current, expirationTime);
 
